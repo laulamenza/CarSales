@@ -1,1 +1,24 @@
-<p>car-list works!</p>
+<h1>Vehículos</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Imagen</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Año</th>
+            <th>Combustible</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let car of cars" [ngClass]="{'okm': car.okm }">
+            <td><img src="{{car.imagen}}" alt="{{car.modelo}}"></td>
+            <td>{{car.marca}}</td>
+            <td>{{car.modelo}}</td>
+            <td *ngIf="car.anio==0;else elseBlock"><span class="badge text-bg-primary">OKM</span></td>
+            <ng-template #elseBlock>{{car.anio}}</ng-template>
+            <td>{{car.combustible}}</td>
+            <td>{{car.precio | currency}}</td>
+        </tr>
+    </tbody>
+</table>
