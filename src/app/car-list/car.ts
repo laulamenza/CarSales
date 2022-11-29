@@ -6,4 +6,5 @@ export interface Car{
     precio: number;
     imagen: string;
     okm: boolean;
+    reservado: boolean;
 }
