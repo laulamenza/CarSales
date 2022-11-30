@@ -1,1 +1,18 @@
 <h1>Carrito</h1>
+
+<table class="table text-center">
+    <thead>
+        <tr>
+            <th>Modelo</th>
+            <th>Precio</th>
+            <th>Quitar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let car of carritoList$ | async">
+            <td>{{car.modelo}}</td>
+            <td>{{car.precio}}</td>
+            <td><button class="btn btn-primary" (click)="removeCar(car)">Quitar</button></td>
+        </tr>
+    </tbody>
+</table>
